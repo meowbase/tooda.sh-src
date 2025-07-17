@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TOoDA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/gif" href="favicon.gif">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
+      overflow: hidden;
+      font-weight: 300;
+    }
+
+    #enter-screen {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: black;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 1.5s ease;
+    }
+
+    #enter-screen button {
+      background: none;
+      border: none;
+      color: #e0e0e0;
+      font-size: 12px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #main {
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .swing {
+      width: 100px;
+      display: block;
+      margin: 0 auto;
+      transform-origin: top center;
+      -webkit-animation-name: swing;
+      animation-name: swing;
+      -webkit-animation-duration: 2s;
+      animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function: ease-in-out;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes swing {
+      0%   { transform: rotate(2deg); }
+      50%  { transform: rotate(-2deg); }
+      100% { transform: rotate(2deg); }
+    }
+
+    .content {
+      margin-top: 30px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .sub {
+      font-size: 12px;
+      color: #aaa;
+      margin-top: -4px;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+
+    .links a {
+      color: #f05454;
+      font-size: 11px;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      font-weight: 300;
+    }
+
+    hr {
+      border: none;
+      border-top: 0.3px solid #444;
+      width: 25%;
+      height: 0;
+      margin: 25px auto;
+    }
+
+    .names {
+      font-family: 'Montserrat', sans-serif;
+      background-color: rgb(6, 6, 6);
+      color: #e0e0e0;
+      font-size: 12px;
+      line-height: 3.3;
+      margin: 0;
+      padding: 20px 0;
+    }
+
+    footer {
+      font-size: 10px;
+      color: #555;
+      margin-top: 0px;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="enter-screen">
+    <button onclick="enter()">Click to Enter</button>
+  </div>
+
+  <audio id="bg-audio" src="too.mp3" loop></audio>
+
+  <div id="main">
+    <img src="angel.png" class="swing" alt="Angel" />
+    <div class="content">
+      <h1>The Order of Dark Angels</h1>
+      <div class="sub">We Ride at Dawn</div>
+
+      <div class="links">
+        <a href="#">DOXBIN ADMIN RIVER A.K.A PAULAS DOX</a>
+        <a href="#">DOWNLOAD THE USER DATABASE HERE</a>
+        <a href="#">DOWNLOAD THE DOXBIN BLACKLIST</a>
+        <a href="#">Follow us on X</a>
+      </div>
+
+      <hr />
+
+      <div class="names">
+        Eco<br>
+        Emo<br>
+        Elo<br>
+        user<br>
+        Dante<br>
+        Sexy
+      </div>
+
+      <footer>
+        © 2025 The Order of Dark Angels. All rights reserved.<br>
+        CoDD'd by BAM3N
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function enter() {
+      document.getElementById("enter-screen").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("enter-screen").style.display = "none";
+        document.getElementById("main").style.opacity = "1";
+        document.body.style.overflow = "auto";
+        const audio = document.getElementById("bg-audio");
+        audio.play();
+      }, 1500);
+    }
+  </script>
+
+</body>
+</html>
